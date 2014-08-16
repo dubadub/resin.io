@@ -1,0 +1,2 @@
+before ->
+  primes = new PrimeNumberProcessor()
