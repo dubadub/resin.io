@@ -1,4 +1,4 @@
-# main.coffee
+# prime_number_processor.coffee
 
 describe 'PrimeNumberProcessor', ->
 

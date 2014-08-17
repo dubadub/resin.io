@@ -2,26 +2,27 @@
 @PrimeNumberProcessor = class PrimeNumberProcessor
   primeNumbers: []
 
-  _isPrimeNumber: (num) ->
-    status = true
+  isPrimeNumber: (num) ->
+    state = true
     if num isnt 2 and num % 2 is 0
-      status = false
+      state = false
     else
       i = 2
 
       while i < num
         if num % i is 0
-          status = false
+          state = false
           break
         ++i
-    status
+    state
 
   generate: (n) ->
     count      = 0
     current    = 2
+    @primeNumbers = []
 
     while count < n
-      if @_isPrimeNumber(current)
+      if @isPrimeNumber(current)
         @primeNumbers.push current
         count++
       current++
