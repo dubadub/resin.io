@@ -56,6 +56,7 @@ module.exports = function (grunt) {
                     '<%= config.app %>/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '.tmp/scripts/{,*/}*.js',
+                    '.tmp/spec/{,*/}*.js',
                     '<%= config.app %>/images/{,*/}*'
                 ]
             }
@@ -88,7 +89,7 @@ module.exports = function (grunt) {
                     middleware: function(connect) {
                         return [
                             connect.static('.tmp'),
-                            connect.static('test'),
+                            // connect.static('test'),
                             connect().use('/bower_components', connect.static('./bower_components')),
                             connect.static(config.app)
                         ];
@@ -135,8 +136,10 @@ module.exports = function (grunt) {
         // Jasmine testing framework configuration options
         jasmine: {
             all: {
+                src: '.tmp/scripts/*.js',
+                keepRunner: true,
                 options: {
-                    specs: 'test/spec/{,*/}*.coffee'
+                    specs: '.tmp/spec/{,*/}*.js'
                 }
             }
         },
