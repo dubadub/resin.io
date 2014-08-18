@@ -4,7 +4,7 @@ describe 'PrimeNumberProcessor', ->
 
     it 'can generate first 10 prime numbers', ->
         processor = new PrimeNumberProcessor()
-        result = processor.generate 10
+        result = processor.fill 10
         expect(result.length).toBe 10
         expect(result[3]).toBe 7
         expect(result[5]).toBe 13

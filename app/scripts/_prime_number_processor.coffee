@@ -16,7 +16,7 @@
         ++i
     isPrimeNumber
 
-  generate: (n) ->
+  fill: (n) ->
     count      = 0
     current    = 2
     @primeNumbers = []
