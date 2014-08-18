@@ -3,18 +3,18 @@
   primeNumbers: []
 
   isPrimeNumber: (num) ->
-    state = true
+    isPrimeNumber = true
     if num isnt 2 and num % 2 is 0
-      state = false
+      isPrimeNumber = false
     else
       i = 2
 
       while i < num
         if num % i is 0
-          state = false
+          isPrimeNumber = false
           break
         ++i
-    state
+    isPrimeNumber
 
   generate: (n) ->
     count      = 0
